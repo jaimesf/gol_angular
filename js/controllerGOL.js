@@ -20,7 +20,7 @@ app.controller('ctrlGOL', ['$scope','$interval',function($scope,$interval) {
   //Id to cancel the interval execution
   var refreshIntervalId;
 
-
+  //Check th field to configure the board
   $scope.$watch('noRows', function () {
     $scope.checkRowsColsInterval();
   });
@@ -53,6 +53,7 @@ app.controller('ctrlGOL', ['$scope','$interval',function($scope,$interval) {
     }
   }
 
+  //Reset the calculate board for each step
   $scope.resetCalculateBoard = function(){
     $scope.calculateBoard = [];
     for(var i = 0; i < $scope.noRows; i++){
