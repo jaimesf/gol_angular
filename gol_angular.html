@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>AngularJS Game Of Life</title>
+
+  <script type="text/javascript" src="js/angularjs/angular.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+  <div class="content" data-ng-app="gol" data-ng-controller="ctrlGOL">
+    <h1>AngularJS Game Of Life</h1>
+    Rows: <input type="number" min="0" max="100" data-ng-model="noRows"/><br>
+    Columns: <input type="number" min="0" max="100" data-ng-model="noColumns"/><br>
+    Interval (milliseconds): <input type="number" min="10" max="1000" data-ng-model="executionInterval"/><br><br>
+
+    <br><br>
+    <div class="board" data-ng-show="showBoard">
+
+      <table>
+        <tr data-ng-repeat="row in boardToDraw">
+          <td data-ng-repeat="col in row track by $index" data-ng-class="{'cell_dead': col == 0,'cell_alive':col == 1}" data-ng-click="switchCell($parent.$index,$index);"></td>
+        </tr>
+      </table>
+      <br><br>
+      <button data-ng-click="start();">Start</button> <button data-ng-click="stop();">Stop</button> <button data-ng-click="calculateNextStep();">Next Step</button>
+      <h3 data-ng-hide="isRunning">Click on cells to change their state</h3>
+    </div>
+
+    <script src="js/controllerGOL.js"></script>
+  </div>
+
+</body>
+</html>

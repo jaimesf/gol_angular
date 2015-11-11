@@ -1,0 +1,31 @@
+.content{
+  width: 700px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+td {
+  width: 5px;
+  height: 5px;
+}
+
+.board {
+  margin: 10px;
+}
+
+.cell_alive{
+  background-color: black;
+}
+
+.cell_dead{
+  background-color: white;
+}
